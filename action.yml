@@ -1,0 +1,17 @@
+name: 'AI Terraform PR Reviewer'
+description: 'Reviews Terraform Code with OpenAI for dangerous changes, security risks, cost optimization, architecture improvements, and code fixes.'
+
+inputs:
+  openai_api_key:
+    description: 'API Key for OpenAI'
+    required: true
+  github_token:
+    description: 'GitHub Token'
+    required: true
+  plan_path:
+    description: 'Path to the Terraform plan file'
+    required: false
+
+runs:
+  using: 'node24'
+  main: 'dist/index.js'
